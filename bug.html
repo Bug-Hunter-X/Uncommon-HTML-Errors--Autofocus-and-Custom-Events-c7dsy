@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Error</title>
+</head>
+<body>
+  <p>This is a paragraph.</p>
+  <div id="myDiv"></div>
+
+  <script>
+    // This is a common error, but let's use it as a starting point.
+    document.getElementById("myDiv").innerHTML = "Hello"; // Error if the div is not found
+    
+    // Uncommon error: Incorrect use of HTML5 autofocus attribute in combination with JavaScript
+    document.getElementById("myDiv").focus(); //Not recommended to use focus() in combination with autofocus
+    //Another uncommon error: Using an event that doesn't exists
+    document.getElementById("myDiv").onmycustomevent = function(){
+      console.log("My Custom Event");
+    };
+
+    // Simulate a custom event (not a real HTML5 event).  This will not work.
+    document.getElementById("myDiv").dispatchEvent(new Event('mycustomevent'));
+  </script>
+</body>
+</html>
