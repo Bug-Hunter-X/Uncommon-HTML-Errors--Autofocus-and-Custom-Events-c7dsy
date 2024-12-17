@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Error Solution</title>
+</head>
+<body>
+  <p>This is a paragraph.</p>
+  <div id="myDiv"></div>
+
+  <script>
+    //Always check if an element exists before using it
+    const myDiv = document.getElementById("myDiv");
+    if (myDiv) {
+      myDiv.innerHTML = "Hello";
+      //Use autofocus attribute directly in HTML.  Avoid using focus() after setting autofocus.
+      //myDiv.focus(); //This is not recommended
+    }
+    //Use standard events. Custom events require more complex event handling setup
+    //Example of a standard event:
+    myDiv.addEventListener('click', function() {
+      console.log('Div clicked!');
+    });
+  </script>
+</body>
+</html>
